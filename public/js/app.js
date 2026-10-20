@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('[QR] Error loading QR code:', err.message);
       const frontpageQrImg = document.getElementById('frontpageQrImg');
       if (frontpageQrImg && !frontpageQrImg.getAttribute('src')) {
-        frontpageQrImg.src = '/assets/portfolio-qr.png';
+        frontpageQrImg.src = './assets/portfolio-qr.png';
       }
     }
   }
@@ -1050,36 +1050,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Intercept all internal navigation link clicks for instant 0ms transitions
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
+  // On static hosts (like GitHub Pages), allow native page transitions
+  const isStaticHost = window.location.hostname.endsWith('github.io') || window.location.protocol === 'file:';
+  if (!isStaticHost) {
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
 
-    const href = link.getAttribute('href');
-    if (!href) return;
+      const href = link.getAttribute('href');
+      if (!href) return;
 
-    // Ignore downloads, external links, api endpoints, and anchor hashes
-    if (
-      href.startsWith('mailto:') ||
-      href.startsWith('tel:') ||
-      href.startsWith('#') ||
-      href.startsWith('/api') ||
-      href.startsWith('http://') ||
-      href.startsWith('https://') ||
-      link.hasAttribute('download') ||
-      link.getAttribute('target') === '_blank'
-    ) {
-      return;
-    }
+      // Ignore downloads, external links, api endpoints, and anchor hashes
+      if (
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith('#') ||
+        href.startsWith('/api') ||
+        href.startsWith('http://') ||
+        href.startsWith('https://') ||
+        link.hasAttribute('download') ||
+        link.getAttribute('target') === '_blank'
+      ) {
+        return;
+      }
 
-    e.preventDefault();
-    instantNavigate(href, true);
-  });
+      e.preventDefault();
+      instantNavigate(href, true);
+    });
 
-  // Handle browser Back / Forward buttons seamlessly
-  window.addEventListener('popstate', () => {
-    instantNavigate(window.location.pathname, false);
-  });
+    // Handle browser Back / Forward buttons seamlessly
+    window.addEventListener('popstate', () => {
+      instantNavigate(window.location.pathname, false);
+    });
+  }
 
   // Pre-cache primary routes for instant 0ms transitions on click
   const coreRoutes = ['/', '/about', '/skills', '/certifications', '/projects', '/resume', '/contact'];
