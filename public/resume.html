@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | NANTHAKUMAR T</title>
+  <meta name="description" content="Official engineering resume of Nanthakumar T featuring verified frontend development credentials and architectural achievements.">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=48.0">
+</head>
+<body>
+  <!-- HEAVENLY MAZE BACKGROUND CANVAS -->
+  <canvas id="mazeCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="/" class="brand-identity">
+        <div class="brand-icon">
+          <img src="/assets/brand-logo.jpg" alt="NANTHA Logo" class="brand-logo-img">
+        </div>
+        <span class="brand-name">NANTHA</span>
+      </a>
+
+      <nav class="main-navigation" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">HOME</a></li>
+          <li><a href="/about" class="nav-link">ABOUT</a></li>
+          <li><a href="/skills" class="nav-link">SKILLS</a></li>
+          <li><a href="/certifications" class="nav-link">CERTIFICATIONS</a></li>
+          <li><a href="/projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="/resume" class="nav-link active" id="navResumeLink">RESUME</a></li>
+          <li><a href="/contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: DEDICATED RESUME PAGE -->
+  <main class="page-main resume-page-main">
+    <div class="container">
+      <div class="page-header-block resume-header-block">
+        <h1 class="page-main-title resume-page-title">OFFICIAL RESUME</h1>
+      </div>
+
+      <div class="resume-view-wrapper">
+        <!-- Sleek Minimized HUD Control Banner -->
+        <div class="resume-meta-banner">
+          <div class="resume-meta-info">
+            <div class="resume-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span>VERIFIED AUTHENTIC</span>
+            </div>
+          </div>
+
+          <div class="resume-actions-group">
+            <button class="btn-hud-ghost" id="themeToggleBtn" type="button" title="Toggle between Dark Cyber Mode and Standard Document">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              <span id="themeToggleLabel">DARK THEME</span>
+            </button>
+            <button class="btn-hud-ghost" id="sizeToggleBtn" type="button" title="Toggle minimized compact view vs expanded view">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
+              <span id="sizeToggleLabel">COMPACT</span>
+            </button>
+            <a href="/api/resume/preview" target="_blank" rel="noopener noreferrer" class="btn-hud-ghost" title="Open PDF in new tab">
+              <span>EXPAND</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <a href="/api/resume/download" class="btn-hud-primary" id="resumeDownloadBtn" title="Download Official PDF">
+              <span>DOWNLOAD PDF</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Embedded Interactive PDF Viewer inside Cyber Terminal Frame -->
+        <div class="resume-terminal-frame" id="resumeTerminalFrame">
+          <div class="terminal-corner corner-tl"></div>
+          <div class="terminal-corner corner-tr"></div>
+          <div class="terminal-corner corner-bl"></div>
+          <div class="terminal-corner corner-br"></div>
+
+          <iframe
+            src="/api/resume/preview#toolbar=0&navpanes=0&view=FitH"
+            class="resume-pdf-frame dark-mode"
+            id="resumeIframe"
+            title="Executive Resume Document Viewer">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content" style="justify-content: center;">
+      <div class="footer-copy">
+        &copy; 2026 NANTHAKUMAR T.
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="/js/app.js?v=36.0"></script>
+  <script src="/js/maze.js?v=9.0"></script>
+  <script src="/js/cursor.js?v=7.0"></script>
+</body>
+</html>

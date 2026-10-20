@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Deep Dark Blue Cyber Gradient Background -->
+    <radialGradient id="cyberAvatarBg" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="45%" stop-color="#0f2255" />
+      <stop offset="100%" stop-color="#0a1945" />
+    </radialGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0a0f1d" />
+    </linearGradient>
+    <linearGradient id="tieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8d7be" />
+      <stop offset="100%" stop-color="#dca580" />
+    </linearGradient>
+    <linearGradient id="cyberAuraRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Obsidian Canvas -->
+  <rect width="400" height="400" fill="url(#cyberAvatarBg)" />
+
+  <!-- Digital Radar / Cyber Grid Lines -->
+  <circle cx="200" cy="180" r="145" fill="none" stroke="url(#cyberAuraRing)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.45" />
+  <circle cx="200" cy="180" r="110" fill="none" stroke="#f97316" stroke-width="0.8" stroke-dasharray="2,6" opacity="0.3" />
+
+  <!-- Executive Shoulders & Suit -->
+  <path d="M 75 400 C 85 305, 140 274, 200 274 C 260 274, 315 305, 325 400 Z" fill="url(#suitGrad)" stroke="#334155" stroke-width="1.5" />
+  
+  <!-- Crisp Executive Shirt Collar -->
+  <polygon points="176,274 200,314 224,274 200,288" fill="#f8fafc" />
+
+  <!-- Electric Amber Security Architect Tie -->
+  <polygon points="194,292 206,292 209,355 200,380 191,355" fill="url(#tieGrad)" />
+
+  <!-- Neck -->
+  <rect x="182" y="224" width="36" height="54" fill="url(#skinGrad)" />
+
+  <!-- Head Base -->
+  <ellipse cx="200" cy="174" rx="60" ry="72" fill="url(#skinGrad)" />
+
+  <!-- Hair Cut -->
+  <path d="M 138 165 C 136 118, 160 94, 200 94 C 240 94, 264 118, 262 165 C 256 124, 246 108, 200 108 C 154 108, 144 124, 138 165 Z" fill="#0f172a" />
+  <path d="M 144 148 C 150 114, 175 100, 215 100 C 248 100, 258 118, 258 144 C 242 126, 222 120, 195 124 C 170 126, 155 136, 144 148 Z" fill="#020617" />
+
+  <!-- Sharp Confident Brows & Eyes -->
+  <path d="M 164 144 Q 174 139 184 144" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="none" />
+  <path d="M 216 144 Q 226 139 236 144" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="none" />
+  <circle cx="174" cy="155" r="4.5" fill="#0f172a" />
+  <circle cx="226" cy="155" r="4.5" fill="#0f172a" />
+  <circle cx="175.5" cy="153.5" r="1.5" fill="#ffffff" />
+  <circle cx="227.5" cy="153.5" r="1.5" fill="#ffffff" />
+
+  <!-- Nose -->
+  <path d="M 200 156 L 196 178 L 204 178" stroke="#ba805b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Confident Executive Smile -->
+  <path d="M 184 198 Q 200 209 216 198" stroke="#ba805b" stroke-width="2.5" stroke-linecap="round" fill="none" />
+</svg>

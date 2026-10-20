@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | NANTHAKUMAR T</title>
+  <meta name="description" content="Curated technical competencies, Artificial Intelligence &amp; Machine Learning, frontend web engineering, applied IoT sensor builds, and data analytics of Nanthakumar T.">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=48.0">
+</head>
+<body>
+  <!-- HEAVENLY MAZE BACKGROUND CANVAS -->
+  <canvas id="mazeCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="/" class="brand-identity">
+        <div class="brand-icon">
+          <img src="/assets/brand-logo.jpg" alt="NANTHA Logo" class="brand-logo-img">
+        </div>
+        <span class="brand-name">NANTHA</span>
+      </a>
+
+      <nav class="main-navigation" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">HOME</a></li>
+          <li><a href="/about" class="nav-link">ABOUT</a></li>
+          <li><a href="/skills" class="nav-link active">SKILLS</a></li>
+          <li><a href="/certifications" class="nav-link">CERTIFICATIONS</a></li>
+          <li><a href="/projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="/resume" class="nav-link" id="navResumeLink">RESUME</a></li>
+          <li><a href="/contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: DEDICATED SKILLS PAGE -->
+  <main class="page-main">
+    <div class="container">
+      <div class="page-header-block">
+        <h1 class="page-main-title">TECHNICAL EXPERTISE &amp; SKILLS</h1>
+      </div>
+
+      <!-- Interactive Skills Categorization Bar -->
+      <div class="projects-filter-bar skills-filter-bar">
+        <button class="filter-btn skill-filter-btn active" data-filter="all">ALL (7)</button>
+        <button class="filter-btn skill-filter-btn" data-filter="web">FRONTEND &amp; WEB (3)</button>
+        <button class="filter-btn skill-filter-btn" data-filter="ai">AI &amp; CLOUD (1)</button>
+        <button class="filter-btn skill-filter-btn" data-filter="hardware">APPLIED IOT (1)</button>
+        <button class="filter-btn skill-filter-btn" data-filter="analytics">ANALYTICS &amp; STRATEGY (2)</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 1. Known Languages: Python, JavaScript, HTML, CSS -->
+        <div class="skill-box" data-category="web">
+          <div>
+            <span class="skill-category-badge badge-web">FRONTEND &amp; WEB CORE</span>
+            <h4>PROGRAMMING &amp; MARKUP LANGUAGES</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>JavaScript (ES6+)</strong> - Modern ESNext, DOM APIs, Async/Await &amp; Event-Driven Architecture</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>HTML5</strong> - Semantic Markup, Web Standards, Accessible Structure &amp; Modern Forms</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>CSS3</strong> - Responsive Layouts, Flexbox, CSS Grid, Custom Properties &amp; Keyframe Motion</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Python</strong> - Python 3, Object-Oriented Logic, Scripting, Automation &amp; Data Structures</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">JavaScript (ES6+)</span>
+            <span class="tech-chip">HTML5</span>
+            <span class="tech-chip">CSS3</span>
+            <span class="tech-chip">Python 3</span>
+            <span class="tech-chip">DOM APIs</span>
+          </div>
+        </div>
+
+        <!-- 2. Web Page Development -->
+        <div class="skill-box" data-category="web">
+          <div>
+            <span class="skill-category-badge badge-web">FRONTEND ARCHITECTURE</span>
+            <h4>WEB APPLICATION &amp; FRONTEND DEVELOPMENT</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name">Semantic &amp; Component-Driven Frontend Architecture</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name">Responsive Design Across Mobile, Tablet &amp; Desktop</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name">Cross-Browser Compatibility &amp; Standards Compliance</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name">High-Performance Page Rendering &amp; Speed Optimization</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">Frontend Dev</span>
+            <span class="tech-chip">Responsive Design</span>
+            <span class="tech-chip">Web Standards</span>
+            <span class="tech-chip">Cross-Browser</span>
+          </div>
+        </div>
+
+        <!-- 3. UI / UX Creation -->
+        <div class="skill-box" data-category="web">
+          <div>
+            <span class="skill-category-badge badge-web">DESIGN SYSTEMS &amp; 3D</span>
+            <h4>UI/UX DESIGN &amp; INTERFACE PROTOTYPING</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>User-Centered Design (UCD)</strong> - Intuitive User Flow Architecture &amp; Wireframing</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Visual Hierarchy &amp; Systems</strong> - Modern Typography, Harmonious Palettes &amp; Responsive Layouts</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Micro-Interactions &amp; Motion</strong> - Fluid State Transitions, Keyframe Animations &amp; Interactive Feedback</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Rapid Spatial Prototyping</strong> - 3D Prototyping, Spatial Design &amp; Digital-to-Physical Modeling <em style="color:var(--cyber-orange); font-size:0.8rem;">(HP LIFE Certified)</em></span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">UI/UX Design</span>
+            <span class="tech-chip">Wireframing</span>
+            <span class="tech-chip">Design Systems</span>
+            <span class="tech-chip">3D Prototyping</span>
+            <span class="tech-chip">Micro-Interactions</span>
+          </div>
+        </div>
+
+        <!-- 4. AI-Augmented Engineering & Cloud Deployment -->
+        <div class="skill-box" data-category="ai">
+          <div>
+            <span class="skill-category-badge badge-ai">AI &amp; CLOUD ARCHITECTURE</span>
+            <h4>AI-AUGMENTED ENGINEERING &amp; CLOUD DEPLOYMENT</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Google AI Studio Apps</strong> - Multilingual Speech AI, Prompt Engineering &amp; Speech App Synthesis <em style="color:var(--cyber-orange); font-size:0.8rem;">(GUVI / HCL Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Kubernetes on GKE</strong> - Deploying Open Source AI Models, Cloud Orchestration &amp; Scalable Infrastructure <em style="color:var(--cyber-orange); font-size:0.8rem;">(GDG Madurai Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Generative AI &amp; LLMs</strong> - Prompt Engineering for Code Synthesis, Architecture &amp; Automated Debugging <em style="color:var(--cyber-orange); font-size:0.8rem;">(TATA Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>AI-Assisted Prototyping</strong> - Rapid Feature Synthesis, Automated Refactoring &amp; Test Quality Audits</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">Google AI Studio</span>
+            <span class="tech-chip">Kubernetes (GKE)</span>
+            <span class="tech-chip">Generative AI</span>
+            <span class="tech-chip">Speech AI</span>
+            <span class="tech-chip">Prompt Engineering</span>
+            <span class="tech-chip">Cloud Deployment</span>
+          </div>
+        </div>
+
+        <!-- 5. Applied IoT & Sensor Projects (2 Builds) -->
+        <div class="skill-box" data-category="hardware">
+          <div>
+            <span class="skill-category-badge badge-hardware">APPLIED IOT PROTOTYPES</span>
+            <h4>APPLIED IOT &amp; SENSOR PROJECTS (2 BUILDS)</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Battery Health (SOH) Monitoring</strong> - Hands-on ESP32 build interfacing INA219 current/voltage sensors &amp; DS18B20 temperature probes for battery telemetry</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Motor Vibration Tracking</strong> - Experimental sensor setup reading accelerometer vibration data for basic machinery anomaly detection</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Basic Sensor Interfacing</strong> - Experience with breadboard circuit wiring, INA219 sensors, and temperature probes</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Microcontroller Basics</strong> - Flashing sketches, reading serial output, and collecting sensor streams via ESP32</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">ESP32 Basics</span>
+            <span class="tech-chip">Battery SOH Build</span>
+            <span class="tech-chip">Motor Vibration Build</span>
+            <span class="tech-chip">Sensor Interfacing</span>
+            <span class="tech-chip">INA219 Sensor</span>
+            <span class="tech-chip">DS18B20 Probe</span>
+          </div>
+        </div>
+
+        <!-- 6. Enterprise Data Analytics & Problem Solving -->
+        <div class="skill-box" data-category="analytics">
+          <div>
+            <span class="skill-category-badge badge-data">DATA ANALYTICS &amp; FORENSICS</span>
+            <h4>DATA ANALYTICS &amp; LOGICAL PROBLEM SOLVING</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Forensic Technology &amp; Analytics</strong> - Data Investigation, Anomaly Detection &amp; Enterprise Analysis <em style="color:var(--cyber-orange); font-size:0.8rem;">(Deloitte Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Predictive AI &amp; Risk Profiling</strong> - Exploratory Data Analysis, Predictive Delinquency AI &amp; Strategy <em style="color:var(--cyber-orange); font-size:0.8rem;">(TATA Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Financial Controllers &amp; Valuations</strong> - Asset Valuation Models, Fund Accounting &amp; Audit Integrity <em style="color:var(--cyber-orange); font-size:0.8rem;">(Goldman Sachs Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Root-Cause Troubleshooting</strong> - Algorithmic Thinking, Logic Optimization &amp; Systematic Debugging</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">Data Analytics</span>
+            <span class="tech-chip">Forensic Tech</span>
+            <span class="tech-chip">Predictive Modeling</span>
+            <span class="tech-chip">Valuation Modeling</span>
+            <span class="tech-chip">Problem Solving</span>
+          </div>
+        </div>
+
+        <!-- 7. Professional Communication & Collaboration -->
+        <div class="skill-box" data-category="analytics">
+          <div>
+            <span class="skill-category-badge badge-strategy">PROFESSIONAL STRATEGY &amp; COLLABORATION</span>
+            <h4>PROFESSIONAL COMMUNICATION &amp; COLLABORATION</h4>
+            <div class="skill-items-grid">
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Executive Business Communication</strong> - High-Impact Written Correspondence &amp; Stakeholder Alignment <em style="color:var(--cyber-orange); font-size:0.8rem;">(HP LIFE Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Career Architecture &amp; Positioning</strong> - Strategic Narrative Construction, Executive Interviewing &amp; Presence <em style="color:var(--cyber-orange); font-size:0.8rem;">(HP LIFE Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Digital Strategy &amp; Outreach</strong> - Brand Positioning, Audience Engagement &amp; Campaign Metrics <em style="color:var(--cyber-orange); font-size:0.8rem;">(HP LIFE Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Data Storytelling &amp; Strategy</strong> - Translating Complex Technical Analytics into Executive Business Actions <em style="color:var(--cyber-orange); font-size:0.8rem;">(TATA Certified)</em></span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Technical Documentation</strong> - Architectural Blueprints, Code Walkthroughs &amp; API Specifications</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-bullet">&bull;</span>
+                <span class="skill-name"><strong>Agile Team Delivery</strong> - Sprint Planning, Daily Standups, Cross-Functional Teamwork &amp; Active Collaboration</span>
+              </div>
+            </div>
+          </div>
+          <div class="tech-chips">
+            <span class="tech-chip">Executive Writing</span>
+            <span class="tech-chip">Career Architecture</span>
+            <span class="tech-chip">Digital Strategy</span>
+            <span class="tech-chip">Data Storytelling</span>
+            <span class="tech-chip">Technical Specs</span>
+            <span class="tech-chip">Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content" style="justify-content: center;">
+      <div class="footer-copy">
+        &copy; 2026 NANTHAKUMAR T.
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="/js/app.js?v=36.0"></script>
+  <script src="/js/maze.js?v=9.0"></script>
+  <script src="/js/cursor.js?v=7.0"></script>
+</body>
+</html>

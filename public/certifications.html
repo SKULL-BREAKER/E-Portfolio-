@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | NANTHAKUMAR T</title>
+  <meta name="description" content="Verified industry credentials, competitive hackathon recognitions, and enterprise technical simulations earned by Nanthakumar T.">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=48.0">
+</head>
+<body>
+  <!-- HEAVENLY MAZE BACKGROUND CANVAS -->
+  <canvas id="mazeCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="/" class="brand-identity">
+        <div class="brand-icon">
+          <img src="/assets/brand-logo.jpg" alt="NANTHA Logo" class="brand-logo-img">
+        </div>
+        <span class="brand-name">NANTHA</span>
+      </a>
+
+      <nav class="main-navigation" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">HOME</a></li>
+          <li><a href="/about" class="nav-link">ABOUT</a></li>
+          <li><a href="/skills" class="nav-link">SKILLS</a></li>
+          <li><a href="/certifications" class="nav-link active">CERTIFICATIONS</a></li>
+          <li><a href="/projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="/resume" class="nav-link" id="navResumeLink">RESUME</a></li>
+          <li><a href="/contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: DEDICATED CERTIFICATIONS PAGE -->
+  <main class="page-main">
+    <div class="container">
+      <div class="page-header-block">
+        <h1 class="page-main-title">INDUSTRY CERTIFICATIONS</h1>
+      </div>
+
+      <!-- Credentials Classification Filter Bar -->
+      <div class="projects-filter-bar cert-filter-bar">
+        <button class="filter-btn cert-filter-btn active" data-filter="all">ALL (10)</button>
+        <button class="filter-btn cert-filter-btn" data-filter="events">EVENTS (1)</button>
+        <button class="filter-btn cert-filter-btn" data-filter="competitions">COMPETITIONS (2)</button>
+        <button class="filter-btn cert-filter-btn" data-filter="skills">SKILLS (8)</button>
+      </div>
+
+      <!-- Skills Sub-Categorization Bar: Technology, Languages, General -->
+      <div class="cert-subfilter-bar" id="certSubfilterBar" style="display: none;">
+        <span class="subfilter-label">SKILL CATEGORY:</span>
+        <button class="subfilter-btn cert-subfilter-btn active" data-subfilter="all-skills">ALL SKILLS (8)</button>
+        <button class="subfilter-btn cert-subfilter-btn" data-subfilter="technology">TECHNOLOGY (5)</button>
+        <button class="subfilter-btn cert-subfilter-btn" data-subfilter="languages">LANGUAGES (2)</button>
+        <button class="subfilter-btn cert-subfilter-btn" data-subfilter="general">GENERAL (4)</button>
+      </div>
+
+      <div class="cert-grid">
+        <!-- 1. COMPETITION: Smart India Hackathon 2026 (SIH 2026) -->
+        <div class="cert-card" data-skill-category="competitions" data-sub-category="">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">GOVT OF INDIA / SIH</span>
+              <span class="cert-status-badge">SHORTLISTED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>COMPETITION &bull; NATIONAL HACKATHON</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Smart India Hackathon 2026: Project Guardian (Team Code Dominators)"
+                data-org="Ministry of Education &amp; MoSPI (Problem Statement SIH26102)"
+                data-id="SIH2026-TEAM-CODE-DOMINATORS-SIH26102"
+                data-date="2026"
+                data-file="/certificates/Smart India Hackathon 2026 - SIH26102.pdf"
+                data-skills="Smart Governance, Duplicate Project Detection, Geospatial Tracking, React & Node.js Architecture, Team Leadership (SIH)">
+              <span class="cert-title-text">Smart India Hackathon 2026 (SIH 2026)</span>
+            </h3>
+            <div class="cert-org">Ministry of Education &amp; MoSPI (Code Dominators)</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">SIH Problem SIH26102</span>
+              <span class="tech-chip">MPLAD System</span>
+              <span class="tech-chip">Duplicate Project Detection</span>
+              <span class="tech-chip">National Hackathon</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Smart India Hackathon 2026: Project Guardian (Team Code Dominators)"
+              data-org="Ministry of Education &amp; MoSPI (Problem Statement SIH26102)"
+              data-id="SIH2026-TEAM-CODE-DOMINATORS-SIH26102"
+              data-date="2026"
+              data-file="/certificates/Smart India Hackathon 2026 - SIH26102.pdf"
+              data-skills="Smart Governance, Duplicate Project Detection, Geospatial Tracking, React & Node.js Architecture, Team Leadership (SIH)">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. COMPETITION & SKILL: Google AI Studio / GUVI / HCL (TECHNOLOGY & LANGUAGES) -->
+        <div class="cert-card" data-skill-category="competitions skills" data-sub-category="technology languages">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">GOOGLE / HCL</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; TECHNOLOGY &bull; MULTILINGUAL AI SPEECH</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Build &amp; Deploy AI Apps with Google AI Studio: Multilingual AI Speech App Development"
+                data-org="GUVI | HCL (Google for Education Partner, ISO 9001-27001)"
+                data-id="5310ms7Y31GILb829J"
+                data-date="June 16, 2026"
+                data-file="/certificates/HCL GUVI Certification - (DEPLOY AI APPS) .png"
+                data-verify="https://www.guvi.in/certificate?id=5310ms7Y31GILb829J"
+                data-skills="Google AI Studio, Multilingual AI Speech Apps, Prompt Engineering, Model Deployment">
+              <span class="cert-title-text">Build &amp; Deploy AI Apps with Google AI Studio</span>
+            </h3>
+            <div class="cert-org">GUVI &amp; HCL (Google for Education Partner)</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Google AI Studio</span>
+              <span class="tech-chip">Multilingual Speech AI</span>
+              <span class="tech-chip">Model Deployment</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Build &amp; Deploy AI Apps with Google AI Studio: Multilingual AI Speech App Development"
+              data-org="GUVI | HCL (Google for Education Partner, ISO 9001-27001)"
+              data-id="5310ms7Y31GILb829J"
+              data-date="June 16, 2026"
+              data-file="/certificates/HCL GUVI Certification - (DEPLOY AI APPS) .png"
+              data-verify="https://www.guvi.in/certificate?id=5310ms7Y31GILb829J"
+              data-skills="Google AI Studio, Multilingual AI Speech Apps, Prompt Engineering, Model Deployment">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. EVENT: GDG Madurai & OpenmadurAI Community -->
+        <div class="cert-card" data-skill-category="events" data-sub-category="">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">GOOGLE DEV GROUPS</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>EVENT &bull; TECHNICAL WORKSHOP</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Deploying Open Models on GKE (Google Kubernetes Engine)"
+                data-org="Google Developer Groups (GDG Madurai) &amp; OpenmadurAI Community"
+                data-id="3K7P-Q9M2-T6V8-RL4D"
+                data-date="18 May 2026"
+                data-file="/certificates/OPEN AI MADURAI .pdf"
+                data-skills="Kubernetes (GKE), Google Cloud Platform, AI Model Deployment, Scalable Cloud Infrastructure">
+              <span class="cert-title-text">Deploying Open Models on GKE</span>
+            </h3>
+            <div class="cert-org">GDG Madurai &amp; OpenmadurAI Community</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Kubernetes (GKE)</span>
+              <span class="tech-chip">Cloud Computing</span>
+              <span class="tech-chip">Open AI Models</span>
+              <span class="tech-chip">GDG Community</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Deploying Open Models on GKE (Google Kubernetes Engine)"
+              data-org="Google Developer Groups (GDG Madurai) &amp; OpenmadurAI Community"
+              data-id="3K7P-Q9M2-T6V8-RL4D"
+              data-date="18 May 2026"
+              data-file="/certificates/OPEN AI MADURAI .pdf"
+              data-skills="Kubernetes (GKE), Google Cloud Platform, AI Model Deployment, Scalable Cloud Infrastructure">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. SKILL: TATA GenAI Data Analytics (TECHNOLOGY) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="technology">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">TATA</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; TECHNOLOGY &bull; AI DATA ANALYTICS</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="GenAI Powered Data Analytics Job Simulation"
+                data-org="Tata Group (Issued via Forage)"
+                data-id="sm3rtsskNQwf2ZR4Y | User: 6a43917c2f311f9c3f050f69"
+                data-date="June 30th, 2026"
+                data-file="/certificates/TATA FORAGE completion_certificate.pdf"
+                data-skills="Generative AI, Exploratory Data Analysis, Predictive Delinquency AI, Data Storytelling">
+              <span class="cert-title-text">GenAI Powered Data Analytics</span>
+            </h3>
+            <div class="cert-org">Tata Group (Issued by Forage)</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Generative AI</span>
+              <span class="tech-chip">Predictive Modeling</span>
+              <span class="tech-chip">EDA &amp; Risk Profiling</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="GenAI Powered Data Analytics Job Simulation"
+              data-org="Tata Group (Issued via Forage)"
+              data-id="sm3rtsskNQwf2ZR4Y | User: 6a43917c2f311f9c3f050f69"
+              data-date="June 30th, 2026"
+              data-file="/certificates/TATA FORAGE completion_certificate.pdf"
+              data-skills="Generative AI, Exploratory Data Analysis, Predictive Delinquency AI, Data Storytelling">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. SKILL: Deloitte Data Analytics (TECHNOLOGY) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="technology">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">DELOITTE</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; TECHNOLOGY &bull; FORENSIC TECH &amp; AUDIT</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Data Analytics &amp; Forensic Technology Job Simulation"
+                data-org="Deloitte (Issued via Forage)"
+                data-id="8qiWmwrcJzxonuDGe | User: 6a43917c2f311f9c3f050f69"
+                data-date="July 2nd, 2026"
+                data-file="/certificates/FORAGE DELOITTE_completion_certificate.pdf"
+                data-skills="Data Analysis, Forensic Technology, Risk Assessment, Business Analytics">
+              <span class="cert-title-text">Data Analytics &amp; Forensic Tech</span>
+            </h3>
+            <div class="cert-org">Deloitte (Issued by Forage)</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Data Analysis</span>
+              <span class="tech-chip">Forensic Technology</span>
+              <span class="tech-chip">Enterprise Audit</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Data Analytics &amp; Forensic Technology Job Simulation"
+              data-org="Deloitte (Issued via Forage)"
+              data-id="8qiWmwrcJzxonuDGe | User: 6a43917c2f311f9c3f050f69"
+              data-date="July 2nd, 2026"
+              data-file="/certificates/FORAGE DELOITTE_completion_certificate.pdf"
+              data-skills="Data Analysis, Forensic Technology, Risk Assessment, Business Analytics">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. SKILL: Goldman Sachs (TECHNOLOGY) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="technology">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">GOLDMAN SACHS</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; TECHNOLOGY &bull; FINANCIAL VALUATION &amp; CONTROLLERS</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Controllers Job Simulation"
+                data-org="Goldman Sachs (Issued via Forage)"
+                data-id="o9uPPaSHpgn8C7CgR | User: 6a43917c2f311f9c3f050f69"
+                data-date="July 8th, 2026"
+                data-file="/certificates/Forage Certificate.pdf"
+                data-skills="Fund Accounting Valuations, Controller Foundations, Financial Auditing, Financial Engineering">
+              <span class="cert-title-text">Controllers &amp; Fund Valuation</span>
+            </h3>
+            <div class="cert-org">Goldman Sachs (Issued by Forage)</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Valuation Modeling</span>
+              <span class="tech-chip">Fund Accounting</span>
+              <span class="tech-chip">Financial Controls</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Controllers Job Simulation"
+              data-org="Goldman Sachs (Issued via Forage)"
+              data-id="o9uPPaSHpgn8C7CgR | User: 6a43917c2f311f9c3f050f69"
+              data-date="July 8th, 2026"
+              data-file="/certificates/Forage Certificate.pdf"
+              data-skills="Fund Accounting Valuations, Controller Foundations, Financial Auditing, Financial Engineering">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. SKILL: HP Foundation - 3D Printing (TECHNOLOGY & GENERAL) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="technology general">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">HP FOUNDATION</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; TECHNOLOGY &bull; 3D PRINTING &amp; RAPID PROTOTYPING</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="3D Printing &amp; Rapid Prototyping"
+                data-org="HP LIFE | HP Foundation"
+                data-id="4e22c69a-fae7-47e8-a2ef-791a8407e823"
+                data-date="June 16, 2026"
+                data-file="/certificates/3D Printing.pdf"
+                data-skills="Additive Manufacturing, Rapid Prototyping, Spatial 3D Design, Hardware Iteration">
+              <span class="cert-title-text">3D Printing &amp; Rapid Prototyping</span>
+            </h3>
+            <div class="cert-org">HP LIFE &amp; HP Foundation</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Rapid Prototyping</span>
+              <span class="tech-chip">3D Printing</span>
+              <span class="tech-chip">Additive Tech</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="3D Printing &amp; Rapid Prototyping"
+              data-org="HP LIFE | HP Foundation"
+              data-id="4e22c69a-fae7-47e8-a2ef-791a8407e823"
+              data-date="June 16, 2026"
+              data-file="/certificates/3D Printing.pdf"
+              data-skills="Additive Manufacturing, Rapid Prototyping, Spatial 3D Design, Hardware Iteration">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. SKILL: HP Foundation - Business Email (GENERAL & LANGUAGES) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="general languages">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">HP FOUNDATION</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; GENERAL &bull; BUSINESS COMMUNICATION</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Business Email &amp; Executive Communication"
+                data-org="HP LIFE | HP Foundation"
+                data-id="b29e23ed-34a7-44b2-a860-5dcafdb75b17"
+                data-date="June 15, 2026"
+                data-file="/certificates/Business Email.pdf"
+                data-skills="Executive Communication, Business Correspondence, Stakeholder Management, Technical Writing">
+              <span class="cert-title-text">Executive Business Communication</span>
+            </h3>
+            <div class="cert-org">HP LIFE &amp; HP Foundation</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Business Writing</span>
+              <span class="tech-chip">Stakeholder Alignment</span>
+              <span class="tech-chip">Executive Tone</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Business Email &amp; Executive Communication"
+              data-org="HP LIFE | HP Foundation"
+              data-id="b29e23ed-34a7-44b2-a860-5dcafdb75b17"
+              data-date="June 15, 2026"
+              data-file="/certificates/Business Email.pdf"
+              data-skills="Executive Communication, Business Correspondence, Stakeholder Management, Technical Writing">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 9. SKILL: HP Foundation - Resume Writing & Job Interviewing (GENERAL) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="general">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">HP FOUNDATION</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; GENERAL &bull; CAREER STRATEGY &amp; INTERVIEWING</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Resume Writing and Professional Interviewing"
+                data-org="HP LIFE | HP Foundation"
+                data-id="bcc9c9d6-bb24-470e-92f3-8599dcba76db"
+                data-date="July 8, 2026"
+                data-file="/certificates/Resume Writing and Job Interviewing.pdf"
+                data-skills="Professional Narrative, Executive Positioning, Strategic Interviewing, Career Architecture">
+              <span class="cert-title-text">Resume Writing &amp; Interview Strategy</span>
+            </h3>
+            <div class="cert-org">HP LIFE &amp; HP Foundation</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Executive Positioning</span>
+              <span class="tech-chip">Professional Narrative</span>
+              <span class="tech-chip">Interview Architecture</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Resume Writing and Professional Interviewing"
+              data-org="HP LIFE | HP Foundation"
+              data-id="bcc9c9d6-bb24-470e-92f3-8599dcba76db"
+              data-date="July 8, 2026"
+              data-file="/certificates/Resume Writing and Job Interviewing.pdf"
+              data-skills="Professional Narrative, Executive Positioning, Strategic Interviewing, Career Architecture">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- 10. SKILL: HP Foundation - Social Media Marketing (GENERAL) -->
+        <div class="cert-card" data-skill-category="skills" data-sub-category="general">
+          <div>
+            <div class="cert-card-top">
+              <span class="cert-badge">HP FOUNDATION</span>
+              <span class="cert-status-badge">VERIFIED</span>
+            </div>
+            <div class="cert-domain-badge"><span class="domain-dot"></span>SKILL &bull; GENERAL &bull; DIGITAL MARKETING &amp; STRATEGY</div>
+            <h3 class="cert-title-clickable view-cert-btn"
+                role="button" tabindex="0" title="Click to view certificate"
+                data-title="Social Media Marketing &amp; Digital Strategy"
+                data-org="HP LIFE | HP Foundation"
+                data-id="cec684f0-e745-4153-8cdf-fc0781f97448"
+                data-date="July 8, 2026"
+                data-file="/certificates/Social Media Marketing.pdf"
+                data-skills="Digital Marketing, Audience Engagement, Brand Positioning, Campaign Metrics">
+              <span class="cert-title-text">Social Media Marketing &amp; Outreach</span>
+            </h3>
+            <div class="cert-org">HP LIFE &amp; HP Foundation</div>
+            <div class="project-chips" style="margin: 0.65rem 0 1rem 0;">
+              <span class="tech-chip">Digital Strategy</span>
+              <span class="tech-chip">Audience Engagement</span>
+              <span class="tech-chip">Brand Positioning</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem;">
+            <button class="btn-dark-outline view-cert-btn" style="flex:1; justify-content:center; font-size:0.76rem; padding:0.5rem 0.8rem;"
+              data-title="Social Media Marketing &amp; Digital Strategy"
+              data-org="HP LIFE | HP Foundation"
+              data-id="cec684f0-e745-4153-8cdf-fc0781f97448"
+              data-date="July 8, 2026"
+              data-file="/certificates/Social Media Marketing.pdf"
+              data-skills="Digital Marketing, Audience Engagement, Brand Positioning, Campaign Metrics">
+              <span>VIEW CERTIFICATE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px; vertical-align:middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: CERTIFICATE VIEWER (SIMPLE UX ARCHITECTURE) -->
+    <div class="modal-overlay" id="certModal" role="dialog" aria-modal="true" style="padding: 1rem;">
+      <div class="modal-dialog cert-viewer-dialog">
+        <div class="cert-modal-header">
+          <div class="cert-modal-title-group">
+            <span class="cert-modal-issuer" id="certModalOrg">VERIFIED CREDENTIAL</span>
+            <h2 class="cert-modal-title" id="certModalTitle">Certificate of Completion</h2>
+          </div>
+          <div class="modal-header-actions">
+            <a id="certModalExpandBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn-hud-ghost" style="font-size:0.75rem; padding:0.4rem 0.8rem;" title="Open original document in new tab">
+              <span>FULLSCREEN</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:4px; vertical-align:middle;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            <button class="modal-close-btn" id="closeCertModal" aria-label="Close certificate viewer">&times;</button>
+          </div>
+        </div>
+
+        <!-- The Real Certificate Preview Surface -->
+        <div class="cert-viewer-canvas">
+          <!-- Image Viewer Container (for PNG / JPG) -->
+          <div id="certImageContainer" class="cert-doc-container" style="display:none;">
+            <img id="certModalImg" src="" alt="Certificate Document" class="cert-preview-img">
+          </div>
+          <!-- PDF Viewer Container (for PDF) -->
+          <div id="certIframeContainer" class="cert-doc-container" style="display:none;">
+            <iframe id="certModalIframe" src="" class="cert-preview-iframe" title="Certificate Document Viewer"></iframe>
+          </div>
+        </div>
+
+        <!-- Simple UX Details Strip -->
+        <div class="cert-viewer-footer">
+          <div class="cert-footer-meta">
+            <div class="meta-item"><span class="meta-label">CREDENTIAL ID:</span> <strong id="certModalId" style="color:var(--text-primary); font-family:var(--font-mono); font-size:0.78rem;"></strong></div>
+            <div class="meta-item"><span class="meta-label">STATUS:</span> <span class="status-verified-text">&#9679; VERIFIED AUTHENTIC</span></div>
+            <div class="meta-item"><span class="meta-label">ISSUE DATE:</span> <span id="certModalDate" style="color:var(--text-primary);"></span></div>
+          </div>
+          <div class="cert-footer-actions">
+            <a id="certModalOnlineVerify" href="#" target="_blank" rel="noopener noreferrer" class="btn-white-solid" style="font-size:0.76rem; padding:0.45rem 0.9rem; display:none;">
+              <span>VERIFY ONLINE</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:4px; vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </a>
+            <button class="btn-dark-outline" id="certModalCloseFooterBtn" style="font-size:0.76rem; padding:0.45rem 0.9rem;">CLOSE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content" style="justify-content: center;">
+      <div class="footer-copy">
+        &copy; 2026 NANTHAKUMAR T.
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="/js/app.js?v=38.0"></script>
+  <script src="/js/maze.js?v=9.0"></script>
+  <script src="/js/cursor.js?v=7.0"></script>
+</body>
+</html>
