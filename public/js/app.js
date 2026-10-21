@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const certPdfDirectLink = document.getElementById('certPdfDirectLink');
 
     function openCertificateViewer(data) {
-      const { title, org, id, date, file, verifyUrl } = data;
+      const { title, org, id, date, file, pdf, verifyUrl } = data;
 
       if (certModalTitle) certModalTitle.textContent = title || 'Certificate of Completion';
       if (certModalOrg) certModalOrg.textContent = org || 'VERIFIED CREDENTIAL';
@@ -649,17 +649,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const safeFileUrl = cleanFile.startsWith('http') ? cleanFile : encodeURI(cleanFile);
 
+      let cleanPdf = (pdf || file || '').trim();
+      if (cleanPdf) {
+        if (cleanPdf.startsWith('/')) {
+          cleanPdf = '.' + cleanPdf;
+        } else if (!cleanPdf.startsWith('./') && !cleanPdf.startsWith('http')) {
+          cleanPdf = './' + cleanPdf;
+        }
+      }
+      const safePdfUrl = cleanPdf.startsWith('http') ? cleanPdf : encodeURI(cleanPdf);
+
       if (certModalExpandBtn) {
-        if (safeFileUrl) {
-          certModalExpandBtn.href = safeFileUrl;
+        if (safePdfUrl) {
+          certModalExpandBtn.href = safePdfUrl;
           certModalExpandBtn.style.display = 'inline-flex';
         } else {
           certModalExpandBtn.style.display = 'none';
         }
       }
 
-      if (certFallbackLink) certFallbackLink.href = safeFileUrl;
-      if (certPdfDirectLink) certPdfDirectLink.href = safeFileUrl;
+      if (certFallbackLink) certFallbackLink.href = safePdfUrl;
+      if (certPdfDirectLink) certPdfDirectLink.href = safePdfUrl;
 
       if (certModalOnlineVerify) {
         if (verifyUrl) {
@@ -671,42 +681,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Reset viewer containers
-      if (certImageContainer) certImageContainer.style.display = 'none';
       if (certIframeContainer) certIframeContainer.style.display = 'none';
-      if (certImageLoading) certImageLoading.style.display = 'none';
+      if (certModalIframe) certModalIframe.src = '';
       if (certImgFallback) certImgFallback.style.display = 'none';
 
-      // Display the actual certificate
+      // Display certificate as high-definition image with full custom HUD cursor tracking
       if (safeFileUrl) {
-        const isImage = /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(safeFileUrl);
-        if (isImage) {
-          if (certModalIframe) certModalIframe.src = '';
-          if (certImageContainer) certImageContainer.style.display = 'flex';
-          if (certModalImg) {
-            if (certImageLoading) certImageLoading.style.display = 'flex';
+        if (certImageContainer) certImageContainer.style.display = 'flex';
+        if (certModalImg) {
+          if (certImageLoading) certImageLoading.style.display = 'flex';
+          certModalImg.style.display = 'none';
+
+          // Prevent false error triggers
+          certModalImg.onload = () => {
+            if (certImageLoading) certImageLoading.style.display = 'none';
+            certModalImg.style.display = 'block';
+            if (certImgFallback) certImgFallback.style.display = 'none';
+          };
+
+          certModalImg.onerror = () => {
+            if (certImageLoading) certImageLoading.style.display = 'none';
             certModalImg.style.display = 'none';
+            if (certImgFallback) certImgFallback.style.display = 'flex';
+          };
 
-            certModalImg.onload = () => {
-              if (certImageLoading) certImageLoading.style.display = 'none';
-              certModalImg.style.display = 'block';
-            };
-
-            certModalImg.onerror = () => {
-              if (certImageLoading) certImageLoading.style.display = 'none';
-              certModalImg.style.display = 'none';
-              if (certImgFallback) certImgFallback.style.display = 'flex';
-            };
-
-            certModalImg.src = safeFileUrl;
-            certModalImg.alt = title || 'Certificate';
-          }
-        } else {
-          // PDF document
-          if (certModalImg) certModalImg.src = '';
-          if (certIframeContainer) certIframeContainer.style.display = 'flex';
-          if (certModalIframe) {
-            certModalIframe.src = `${safeFileUrl}#toolbar=0&navpanes=0&view=FitH`;
-          }
+          certModalImg.src = safeFileUrl;
+          certModalImg.alt = title || 'Certificate';
         }
       }
 
@@ -718,8 +718,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeCertificateViewer() {
       if (certModal && certModal.classList.contains('active')) {
         certModal.classList.remove('active');
+        if (certModalImg) {
+          certModalImg.onload = null;
+          certModalImg.onerror = null;
+          certModalImg.src = '';
+          certModalImg.style.display = 'none';
+        }
         if (certModalIframe) certModalIframe.src = '';
-        if (certModalImg) certModalImg.src = '';
         if (certImageLoading) certImageLoading.style.display = 'none';
         if (certImgFallback) certImgFallback.style.display = 'none';
       }
@@ -734,6 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
           id: btn.getAttribute('data-id'),
           date: btn.getAttribute('data-date'),
           file: btn.getAttribute('data-file'),
+          pdf: btn.getAttribute('data-pdf'),
           verifyUrl: btn.getAttribute('data-verify'),
           skills: btn.getAttribute('data-skills'),
         });

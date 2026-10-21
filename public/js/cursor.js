@@ -117,7 +117,7 @@
     if (target && target.closest) {
       const isInput = target.closest('input, textarea, [contenteditable="true"]');
       const isInteractive = target.closest(
-        'a, button, .nav-link, .brand-identity, .btn-white-solid, .btn-dark-outline, .btn-qr-action, .filter-btn, .skill-item, .tech-chip, .view-cert-btn, .project-card, .cert-card, .timeline-entry, .skill-box, .about-card, .contact-card, .hero-tagline-text, [role="button"]'
+        'a, button, .nav-link, .brand-identity, .btn-white-solid, .btn-dark-outline, .btn-qr-action, .filter-btn, .skill-item, .tech-chip, .view-cert-btn, .project-card, .cert-card, .timeline-entry, .skill-box, .about-card, .contact-card, .hero-tagline-text, .cert-preview-img, .cert-viewer-canvas, [role="button"]'
       );
 
       if (isInput) {
@@ -173,6 +173,12 @@
     isVisible = true;
     container.classList.add('hud-visible');
     trailNodes.forEach((n) => n.el.classList.add('hud-visible'));
+  });
+
+  window.addEventListener('blur', () => {
+    isVisible = false;
+    container.classList.remove('hud-visible');
+    trailNodes.forEach((n) => n.el.classList.remove('hud-visible'));
   });
 
   // 60FPS Fluid Animation Engine (Lerp & Ghost Trail Physics)
