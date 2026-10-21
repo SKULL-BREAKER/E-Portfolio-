@@ -100,7 +100,7 @@ async function initializeDatabase() {
       'NANTHAKUMAR T',
       'Frontend Developer',
       'Detail-driven 2nd-year B.Tech Artificial Intelligence & Data Science student at Ramco Institute of Technology. Passionate about building AI-driven solutions, responsive web interfaces, and applied machine learning models, with hands-on experience across practical IoT sensor prototypes and verified credentials from Google, HCL, Deloitte, Tata, and Goldman Sachs.',
-      '/assets/nantha-portrait.jpg?v=3.0',
+      './assets/nantha-portrait.jpg?v=3.0',
       'nanthakumar7750@gmail.com',
       '+91 98765 43210',
       'Tamil Nadu, India',

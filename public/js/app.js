@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.location.hash) {
     const rawHash = window.location.hash.replace(/^#/, '');
     const routeMap = {
-      about: '/about',
-      skills: '/skills',
-      certifications: '/certifications',
-      projects: '/projects',
-      resume: '/resume',
-      resumeSection: '/resume',
-      contacts: '/contact',
-      contact: '/contact',
+      about: './about.html',
+      skills: './skills.html',
+      certifications: './certifications.html',
+      projects: './projects.html',
+      resume: './resume.html',
+      resumeSection: './resume.html',
+      contacts: './contact.html',
+      contact: './contact.html',
     };
     if (routeMap[rawHash]) {
       window.location.replace(routeMap[rawHash]);
@@ -65,18 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * 1. Navigation Active Route Highlighting
+   * 1. Navigation Active Route Highlighting (Bulletproof across localhost & GitHub Pages subpaths)
    */
   function updateActiveNav() {
-    const currentPath = window.location.pathname.toLowerCase().replace(/\.html$/, '') || '/';
+    const knownPages = ['about', 'skills', 'certifications', 'projects', 'resume', 'contact'];
+    const currentPath = window.location.pathname.toLowerCase();
+
+    let matchedPage = 'index';
+    for (const page of knownPages) {
+      if (currentPath.includes(page)) {
+        matchedPage = page;
+        break;
+      }
+    }
+
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach((link) => {
-      const href = link.getAttribute('href');
-      if (!href) return;
-      const cleanHref = href.toLowerCase().replace(/\.html$/, '') || '/';
-      if (cleanHref === currentPath) {
-        link.classList.add('active');
-      } else if (cleanHref !== '/' && currentPath.startsWith(cleanHref)) {
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      let linkPage = 'index';
+      for (const page of knownPages) {
+        if (href.includes(page)) {
+          linkPage = page;
+          break;
+        }
+      }
+
+      if (linkPage === matchedPage) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
@@ -441,10 +455,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyPortfolioUrlBtn) {
       copyPortfolioUrlBtn.onclick = async () => {
         try {
-          await navigator.clipboard.writeText(window.location.origin);
+          const shareUrl = window.location.href.split('#')[0].split('?')[0];
+          await navigator.clipboard.writeText(shareUrl);
           showToast('Portfolio link copied to clipboard!', 'success');
         } catch (err) {
-          showToast(window.location.origin, 'success');
+          showToast(window.location.href, 'success');
         }
       };
     }
@@ -452,10 +467,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadQrBtn = document.getElementById('downloadQrBtn');
     if (downloadQrBtn) {
       downloadQrBtn.onclick = () => {
-        const qrSrc = state.qrUrl || document.getElementById('frontpageQrImg')?.src || '/assets/portfolio-qr.png';
+        const qrImg = document.getElementById('frontpageQrImg');
+        const qrSrc = state.qrUrl || qrImg?.src || './assets/portfolio-qr.png';
         if (qrSrc) {
           const link = document.createElement('a');
-          link.download = 'portfolio-qrcode.png';
+          link.download = 'nanthakumar-portfolio-qr.png';
           link.href = qrSrc;
           link.click();
           showToast('QR Code image downloaded.', 'success');
@@ -609,6 +625,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const certIframeContainer = document.getElementById('certIframeContainer');
     const certModalImg = document.getElementById('certModalImg');
     const certModalIframe = document.getElementById('certModalIframe');
+    const certImageLoading = document.getElementById('certImageLoading');
+    const certImgFallback = document.getElementById('certImgFallback');
+    const certFallbackLink = document.getElementById('certFallbackLink');
+    const certPdfDirectLink = document.getElementById('certPdfDirectLink');
 
     function openCertificateViewer(data) {
       const { title, org, id, date, file, verifyUrl } = data;
@@ -618,14 +638,28 @@ document.addEventListener('DOMContentLoaded', () => {
       if (certModalId) certModalId.textContent = id || 'N/A';
       if (certModalDate) certModalDate.textContent = date || 'Verified';
 
+      // Bulletproof path cleanup (removes root slash and ensures relative pathing for GitHub Pages & subpaths)
+      let cleanFile = (file || '').trim();
+      if (cleanFile) {
+        if (cleanFile.startsWith('/')) {
+          cleanFile = '.' + cleanFile;
+        } else if (!cleanFile.startsWith('./') && !cleanFile.startsWith('http')) {
+          cleanFile = './' + cleanFile;
+        }
+      }
+      const safeFileUrl = cleanFile.startsWith('http') ? cleanFile : encodeURI(cleanFile);
+
       if (certModalExpandBtn) {
-        if (file) {
-          certModalExpandBtn.href = file;
+        if (safeFileUrl) {
+          certModalExpandBtn.href = safeFileUrl;
           certModalExpandBtn.style.display = 'inline-flex';
         } else {
           certModalExpandBtn.style.display = 'none';
         }
       }
+
+      if (certFallbackLink) certFallbackLink.href = safeFileUrl;
+      if (certPdfDirectLink) certPdfDirectLink.href = safeFileUrl;
 
       if (certModalOnlineVerify) {
         if (verifyUrl) {
@@ -636,24 +670,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
+      // Reset viewer containers
+      if (certImageContainer) certImageContainer.style.display = 'none';
+      if (certIframeContainer) certIframeContainer.style.display = 'none';
+      if (certImageLoading) certImageLoading.style.display = 'none';
+      if (certImgFallback) certImgFallback.style.display = 'none';
+
       // Display the actual certificate
-      if (file) {
-        const isImage = /\.(png|jpe?g|webp|gif)$/i.test(file);
+      if (safeFileUrl) {
+        const isImage = /\.(png|jpe?g|webp|gif)(\?.*)?$/i.test(safeFileUrl);
         if (isImage) {
-          if (certIframeContainer) certIframeContainer.style.display = 'none';
           if (certModalIframe) certModalIframe.src = '';
           if (certImageContainer) certImageContainer.style.display = 'flex';
           if (certModalImg) {
-            certModalImg.src = file;
+            if (certImageLoading) certImageLoading.style.display = 'flex';
+            certModalImg.style.display = 'none';
+
+            certModalImg.onload = () => {
+              if (certImageLoading) certImageLoading.style.display = 'none';
+              certModalImg.style.display = 'block';
+            };
+
+            certModalImg.onerror = () => {
+              if (certImageLoading) certImageLoading.style.display = 'none';
+              certModalImg.style.display = 'none';
+              if (certImgFallback) certImgFallback.style.display = 'flex';
+            };
+
+            certModalImg.src = safeFileUrl;
             certModalImg.alt = title || 'Certificate';
           }
         } else {
           // PDF document
-          if (certImageContainer) certImageContainer.style.display = 'none';
           if (certModalImg) certModalImg.src = '';
           if (certIframeContainer) certIframeContainer.style.display = 'flex';
           if (certModalIframe) {
-            certModalIframe.src = `${file}#toolbar=0&navpanes=0&view=FitH`;
+            certModalIframe.src = `${safeFileUrl}#toolbar=0&navpanes=0&view=FitH`;
           }
         }
       }
@@ -667,6 +719,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (certModal && certModal.classList.contains('active')) {
         certModal.classList.remove('active');
         if (certModalIframe) certModalIframe.src = '';
+        if (certModalImg) certModalImg.src = '';
+        if (certImageLoading) certImageLoading.style.display = 'none';
+        if (certImgFallback) certImgFallback.style.display = 'none';
       }
     }
 
@@ -934,7 +989,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const formAlert = document.getElementById('formAlert');
     const submitContactBtn = document.getElementById('submitContactBtn');
 
-    if (contactForm) {
+    if (contactForm && !contactForm.dataset.bound) {
+      contactForm.dataset.bound = 'true';
       contactForm.onsubmit = async (e) => {
         e.preventDefault();
 
@@ -969,9 +1025,13 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ name, email, subject, message, hp_website }),
           });
 
+          if (!response.ok) {
+            throw new Error('API route unavailable');
+          }
+
           const data = await response.json();
 
-          if (response.ok && data.success) {
+          if (data.success) {
             contactForm.reset();
             if (formAlert) {
               formAlert.textContent = data.message || 'Your inquiry was securely received. Thank you.';
@@ -979,16 +1039,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             showToast('Message safely delivered to secure inbox.', 'success');
           } else {
-            if (formAlert) {
-              formAlert.textContent = data.error || 'Submission failed. Please check inputs and retry.';
-              formAlert.className = 'form-alert error';
-            }
+            throw new Error(data.error || 'Submission failed');
           }
         } catch (err) {
+          // Resilient fallback for static hosting (e.g. GitHub Pages) where Node.js backend is not running
+          const subjectText = encodeURIComponent(subject || 'Portfolio Inquiry');
+          const bodyText = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
+          const mailtoUrl = `mailto:nanthakumar7750@gmail.com?subject=${subjectText}&body=${bodyText}`;
+          window.location.href = mailtoUrl;
+
           if (formAlert) {
-            formAlert.textContent = 'Network error. Unable to reach security gateway.';
-            formAlert.className = 'form-alert error';
+            formAlert.textContent = 'Inquiry prepared! Launching your default email client to send directly to nanthakumar7750@gmail.com.';
+            formAlert.className = 'form-alert success';
           }
+          showToast('Opening email client...', 'success');
         } finally {
           if (submitContactBtn) {
             submitContactBtn.disabled = false;
@@ -1060,12 +1124,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href');
       if (!href) return;
 
-      // Ignore downloads, external links, api endpoints, and anchor hashes
+      // Ignore downloads, external links, api endpoints, certificate/storage files, and anchor hashes
       if (
         href.startsWith('mailto:') ||
         href.startsWith('tel:') ||
         href.startsWith('#') ||
         href.startsWith('/api') ||
+        href.includes('/certificates/') ||
+        href.includes('certificates/') ||
+        href.startsWith('/storage/') ||
         href.startsWith('http://') ||
         href.startsWith('https://') ||
         link.hasAttribute('download') ||
@@ -1082,23 +1149,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('popstate', () => {
       instantNavigate(window.location.pathname, false);
     });
-  }
 
-  // Pre-cache primary routes for instant 0ms transitions on click
-  const coreRoutes = ['/', '/about', '/skills', '/certifications', '/projects', '/resume', '/contact'];
-  setTimeout(() => {
-    coreRoutes.forEach(async (route) => {
-      try {
-        if (!pageCache.has(route)) {
-          const res = await fetch(route);
-          if (res.ok) {
-            const text = await res.text();
-            pageCache.set(route, text);
+    // Pre-cache primary routes for instant 0ms transitions on click (Dynamic Server only)
+    const coreRoutes = ['/', '/about', '/skills', '/certifications', '/projects', '/resume', '/contact'];
+    setTimeout(() => {
+      coreRoutes.forEach(async (route) => {
+        try {
+          if (!pageCache.has(route)) {
+            const res = await fetch(route);
+            if (res.ok) {
+              const text = await res.text();
+              pageCache.set(route, text);
+            }
           }
-        }
-      } catch (e) {}
-    });
-  }, 100);
+        } catch (e) {}
+      });
+    }, 100);
+  }
 
   // Initialize First Run
   updateActiveNav();
